@@ -1,10 +1,23 @@
 package fr.esgi.al.funprog
 
-object Main extends App {
-  println("Ici le programme principal")
-  // Le code suivant ne compilera pas.
-  // var tmp = null;
-  // var tmp2 = if (tmp == 1) "yes" else 1
+import com.typesafe.config.{Config, ConfigFactory}
+import fr.esgi.al.funprog.argument.input.InputArgumentParser
+import fr.esgi.al.funprog.argument.output.OutputArgumentParser
 
-  // println(s"tmp: $tmp, tmp2: $tmp2")
+object Main extends App {
+
+  // lire le fichier de conf
+  val conf: Config = ConfigFactory.load()
+
+  // choisir le type d'input
+  val input = InputArgumentParser.parse(this.args, conf)
+
+  // choisir le type d'output
+  val output = OutputArgumentParser.parse(this.args)
+
+  // faire agir la tondeuse
+
+  // enregistrer le résultat en fonction de la sortie choisie
+
+
 }
