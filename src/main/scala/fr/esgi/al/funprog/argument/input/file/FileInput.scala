@@ -13,7 +13,7 @@ class FileInput(filePath: String) extends InputArgument {
   override def getMandatoryArguments(): List[InputArgument] = List()
 
   override def getInput(): LandConfiguration = {
-    LandConfiguration()
+    LandConfiguration(0, 0, Map())
   }
 
 }
