@@ -6,4 +6,7 @@ import fr.esgi.al.funprog.land.LandConfiguration
 trait InputArgument extends Argument {
   def argumentName: String
   def getInput(): LandConfiguration
+
+
+  def getMandatoryArguments(): List[InputArgument] = List()
 }

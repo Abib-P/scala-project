@@ -9,7 +9,6 @@ class CmdOutput extends OutputArgument {
     println("CmdOutput.parse")
   }
 
-  override def apply(): Unit = {
-    println("CmdOutput.parse")
-  }
+  override def print(): Unit = println("CmdOutput.print")
+
 }

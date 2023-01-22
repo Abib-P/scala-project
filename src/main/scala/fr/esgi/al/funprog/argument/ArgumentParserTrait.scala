@@ -1,6 +1,7 @@
 package fr.esgi.al.funprog.argument
 
+import fr.esgi.al.funprog.argument.input.CmdArgumentValue
+
 trait ArgumentParserTrait {
-  def optionName: String
-  def parse(args: Array[String]): Option[Argument]
+  def parse(args: Array[String]): List[CmdArgumentValue]
 }
