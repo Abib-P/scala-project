@@ -1,19 +1,24 @@
 package fr.esgi.al.funprog
 
-import fr.esgi.al.funprog.land.{Instructions, LandConfiguration}
-import fr.esgi.al.funprog.land.mower.{Mower, Orientation, Position}
-
+import fr.esgi.al.funprog.io.input.InputParser
+import fr.esgi.al.funprog.io.input.file.FileInput
+import fr.esgi.al.funprog.io.output.OutputParser
 object Main extends App {
 
-  val map = Map(
-    new Mower(new Position(1, 2), Orientation.North) -> List(Instructions.G, Instructions.A, Instructions.G, Instructions.A, Instructions.G, Instructions.A, Instructions.G, Instructions.A, Instructions.A),
-    new Mower(new Position(3, 3), Orientation.East) -> List(Instructions.A, Instructions.A, Instructions.D, Instructions.A, Instructions.A, Instructions.D, Instructions.A, Instructions.D, Instructions.D, Instructions.A),
-    new Mower(new Position(0, 5), Orientation.North) -> List(Instructions.A),
-  )
-  val land = LandConfiguration(5, 5, map)
+  val cliArgs = cli.parseCliArgument(args.toList, List())
+  val input = InputParser.parseCliArgument(cliArgs)
+  val output = OutputParser.parseCliArgument(cliArgs)
+  val test = FileInput("")
 
-  val res = land.resolve()
+//  val map = Map(
+//    new Mower(new Position(1, 2), Orientation.North) -> List(Instructions.G, Instructions.A, Instructions.G, Instructions.A, Instructions.G, Instructions.A, Instructions.G, Instructions.A, Instructions.A),
+//    new Mower(new Position(3, 3), Orientation.East) -> List(Instructions.A, Instructions.A, Instructions.D, Instructions.A, Instructions.A, Instructions.D, Instructions.A, Instructions.D, Instructions.D, Instructions.A),
+//    new Mower(new Position(0, 5), Orientation.North) -> List(Instructions.A),
+//  )
+  val land = input.getInput()
+  private val res = land.resolve()
 
-  println(res.map(_.print()))
+  output.writeOutput(land, res)
 
 }
+
