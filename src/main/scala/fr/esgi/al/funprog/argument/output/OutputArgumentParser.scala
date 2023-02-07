@@ -1,7 +1,7 @@
 package fr.esgi.al.funprog.argument.output
 
 import fr.esgi.al.funprog.argument.ArgumentParserTrait
-import fr.esgi.al.funprog.cli.CmdArgumentValue
+import fr.esgi.al.funprog.cli.CliArgumentValue
 //import fr.esgi.al.funprog.argument.output.cmd.CmdOutput
 
 object OutputArgumentParser extends ArgumentParserTrait {
@@ -14,6 +14,6 @@ object OutputArgumentParser extends ArgumentParserTrait {
 //    Option.empty
 //  }
 
-  override def parse(args: Array[String]): List[CmdArgumentValue] = ???
+  override def parse(args: Array[String]): List[CliArgumentValue] = ???
 }
 
