@@ -1,7 +1,7 @@
 package fr.esgi.al.funprog.argument.output
 
 import fr.esgi.al.funprog.argument.ArgumentParserTrait
-import fr.esgi.al.funprog.argument.input.CmdArgumentValue
+import fr.esgi.al.funprog.cli.CmdArgumentValue
 //import fr.esgi.al.funprog.argument.output.cmd.CmdOutput
 
 object OutputArgumentParser extends ArgumentParserTrait {
