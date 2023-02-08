@@ -1,8 +1,6 @@
-package example
-
+package fr.esgi.al.funprog.cli
 
 import fr.esgi.al.funprog.cli
-import fr.esgi.al.funprog.cli.{CliArgumentInputSrc, CliArgumentInputType, CliArgumentValueInput, CmdArgumentValueInputTypeCli, CliArgumentValueInvalid}
 import org.scalatest.funsuite.AnyFunSuite
 
 class CliSpec extends AnyFunSuite {

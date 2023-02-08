@@ -1,7 +1,6 @@
-package example
+package fr.esgi.al.funprog.io.input
 
-import fr.esgi.al.funprog.cli.{CliArgument, CliArgumentInputSrc, CliArgumentInputType, CliArgumentOutputSrc, CliArgumentOutputType, CliArgumentValue, CliArgumentValueInput, CliArgumentValueInputTypeFile, CliArgumentValueOutputTypeFile}
-import fr.esgi.al.funprog.io.input.InputParser
+import fr.esgi.al.funprog.cli._
 import fr.esgi.al.funprog.io.input.file.FileInput
 import org.scalatest.funsuite.AnyFunSuite
 
