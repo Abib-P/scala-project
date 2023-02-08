@@ -3,7 +3,7 @@ package fr.esgi.al.funprog.land.mower
 import fr.esgi.al.funprog.land.Instructions.{D, A, G, Instruction}
 import fr.esgi.al.funprog.land.mower.Orientation.Orientation
 
-class Mower(initialPosition: Position, initialOrientation: Orientation) {
+case class Mower(initialPosition: Position, initialOrientation: Orientation) {
 
   private val position: Position = initialPosition
   private val orientation: Orientation = initialOrientation
