@@ -1,12 +1,18 @@
 package fr.esgi.al.funprog.io.output
 
+import fr.esgi.al.funprog.cli._
+import fr.esgi.al.funprog.io.getCliArgumentValue
 import fr.esgi.al.funprog.io.output.cmd.CmdOutput
-import fr.esgi.al.funprog.cli.{CliArgument, CliArgumentValue}
+import fr.esgi.al.funprog.io.output.file.FileOutput
 
 object OutputParser  {
   def parseCliArgument(cliArgs: Map[CliArgument, CliArgumentValue]): Output = {
-    println(cliArgs)
-    new CmdOutput()
+    val inputType = getCliArgumentValue(cliArgs, CliArgumentOutputType())
+    inputType match {
+      case List(CliArgumentValueInput(src), CliArgumentValueOutputTypeFile()) => FileOutput(src)
+      case List(CmdArgumentValueOutputTypeCli()) => CmdOutput()
+      case _ => CmdOutput()
+    }
   }
 }
 

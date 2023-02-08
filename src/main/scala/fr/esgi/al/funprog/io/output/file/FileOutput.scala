@@ -4,7 +4,7 @@ import fr.esgi.al.funprog.io.output.Output
 import fr.esgi.al.funprog.land.LandConfiguration
 import fr.esgi.al.funprog.land.mower.Mower
 
-class FileOutput(filePath: String) extends Output  {
+case class FileOutput(filePath: String) extends Output  {
 
   def getFile(): String = filePath
   override def writeOutput(configuration: LandConfiguration, result: List[Mower]): Unit = {
