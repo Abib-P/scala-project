@@ -15,9 +15,9 @@ object Main extends App {
 //    new Mower(new Position(0, 5), Orientation.North) -> List(Instructions.A),
 //  )
   val land = input.getInput()
-  private val res = land.resolve()
+  private val res = land.resolve2()
 
-  output.writeOutput(land, res)
+  output.writeOutput2( res)
 
 }
 

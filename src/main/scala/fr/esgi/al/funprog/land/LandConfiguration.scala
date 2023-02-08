@@ -16,4 +16,15 @@ case class LandConfiguration( width: Int, height: Int, mowers: Map[Mower, List[I
       if (isInside(newMower.getPosition)) newMower else oldMower
     })}.toList
   }
+
+  def resolve2(): LandResult = {
+    LandResult(width, height, mowers.map { case (mower, instructions) => (mower, instructions, instructions.foldLeft(mower)((oldMower, instruction) => {
+      val newMower = oldMower.move(instruction)
+      if (isInside(newMower.getPosition)) newMower else oldMower
+    }))}.toList)
+  }
+}
+
+case class LandResult( width: Int, height: Int, mowers: List[(Mower, List[Instruction], Mower)] ) {
+
 }

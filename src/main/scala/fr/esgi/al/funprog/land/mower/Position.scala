@@ -2,7 +2,7 @@ package fr.esgi.al.funprog.land.mower
 
 import fr.esgi.al.funprog.land.mower.Orientation.Orientation
 
-class Position(x: Int, y: Int) {
+case class Position(x: Int, y: Int) {
   def moveForward(orientation: Orientation): Position = {
     orientation match {
       case Orientation.North => new Position(x, y + 1)
