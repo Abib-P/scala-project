@@ -14,6 +14,8 @@ case class CmdArgumentValueInputTypeCli() extends CliArgumentValue("cmd", List()
 
 case class CliArgumentValueInput(name: String) extends CliArgumentValue(name, List())
 
-case class CliArgumentValueOutputTypeFile() extends CliArgumentValue("file", List(CliArgumentOutputSrc()))
+case class CliArgumentValueOutputTypeJson() extends CliArgumentValue("json", List(CliArgumentOutputSrc()))
+
+case class CliArgumentValueOutputTypeCsv() extends CliArgumentValue("csv", List(CliArgumentOutputSrc()))
 
 case class CmdArgumentValueOutputTypeCli() extends CliArgumentValue("cmd", List())

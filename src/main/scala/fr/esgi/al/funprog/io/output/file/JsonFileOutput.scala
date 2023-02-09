@@ -56,22 +56,9 @@ object JsonSerializable {
 }
 
 case class JsonFileOutput(name: String) extends FileOutput(name) {
-    override def writeOutput(configuration: LandConfiguration, result: List[Mower]) = {
+    def writeOutput(configuration: LandResult) = {
         val file = File(getFile())
         file.createIfNotExists()
-
-        //val test = configuration.mowers.map(m => "\"debut\":" +JsonSerializable.serializeMower.serialize(m._1) +"," + JsonSerializable.serializeInstruction.serialize(m._2) ).fold("")((a,b) => a + "{" + b + "},")
-
-        file.write(JsonSerializable.serializeLand.serialize(configuration, 0))
-        ()
-    }
-
-    def writeOutput2(configuration: LandResult) = {
-        val file = File(getFile())
-        file.createIfNotExists()
-
-        //val test = configuration.mowers.map(m => "\"debut\":" +JsonSerializable.serializeMower.serialize(m._1) +"," + JsonSerializable.serializeInstruction.serialize(m._2) ).fold("")((a,b) => a + "{" + b + "},")
-
         file.overwrite(JsonSerializable.serializeLandResult.serialize(configuration, 1))
         ()
     }

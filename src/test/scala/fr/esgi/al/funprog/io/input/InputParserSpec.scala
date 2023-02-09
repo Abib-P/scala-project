@@ -19,7 +19,7 @@ class InputParserSpec extends AnyFunSuite {
 
   test("should parse -") {
     val test = InputParser.parseCliArgument(
-      Map[CliArgument, CliArgumentValue](CliArgumentInputSrc() -> CliArgumentValueInput("in.txt"), CliArgumentInputType() -> CliArgumentValueInputTypeFile(), CliArgumentOutputSrc() -> CliArgumentValueInput("out.txt"), CliArgumentOutputType() -> CliArgumentValueOutputTypeFile()),
+      Map[CliArgument, CliArgumentValue](CliArgumentInputSrc() -> CliArgumentValueInput("in.txt"), CliArgumentInputType() -> CliArgumentValueInputTypeFile(), CliArgumentOutputSrc() -> CliArgumentValueInput("out.txt"), CliArgumentOutputType() -> CliArgumentValueOutputTypeJson()),
     )
 
     test match {
