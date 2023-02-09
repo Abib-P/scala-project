@@ -7,7 +7,7 @@ import fr.esgi.al.funprog.land.LandConfiguration
 
 case class CmdInput() extends Input {
 
-  override def getInput(): LandConfiguration = {
+  override def getInput: LandConfiguration = {
     print("Enter land width and height:")
     val (width, height) = stringToLandSize(scala.io.StdIn.readLine())
 

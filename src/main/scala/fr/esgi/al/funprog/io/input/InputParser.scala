@@ -15,7 +15,7 @@ import scala.util.Try
 object InputParser {
 
     def stringToLandSize(str: String): (Int, Int) = {
-        str.split(" ") match {
+        str.split(" ").filter( s => s.nonEmpty) match {
             case Array(width, height) =>
                 (Try(width.toInt).getOrElse(throw DonneesIncorectesException("Width must be a number")),
                     Try(height.toInt).getOrElse(throw DonneesIncorectesException("Height must be a number")))
@@ -28,7 +28,7 @@ object InputParser {
     }
 
     def stringToMower(str: String): Mower = {
-        str.split(" ") match {
+        str.split(" ").filter( s => s.nonEmpty)  match {
             case Array(x, y, orientation) =>
                 Mower(
                     Position(

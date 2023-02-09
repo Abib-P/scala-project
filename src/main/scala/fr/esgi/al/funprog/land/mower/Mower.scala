@@ -13,15 +13,15 @@ case class Mower(initialPosition: Position, initialOrientation: Orientation) {
   def getOrientation: Orientation = orientation
 
   private def moveForward(): Mower = {
-    new Mower(position.moveForward(orientation), orientation)
+    Mower(position.moveForward(orientation), orientation)
   }
 
   private def turnLeft(): Mower = {
-    new Mower(position, Orientation.turnLeft(orientation))
+    Mower(position, Orientation.turnLeft(orientation))
   }
 
   private def turnRight(): Mower = {
-    new Mower(position, Orientation.turnRight(orientation))
+    Mower(position, Orientation.turnRight(orientation))
   }
 
   def move(instruction: Instruction): Mower = {

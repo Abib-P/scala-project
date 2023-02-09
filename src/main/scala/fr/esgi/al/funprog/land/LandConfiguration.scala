@@ -6,25 +6,14 @@ import fr.esgi.al.funprog.land.mower.{Mower, Position}
 
 case class LandConfiguration( width: Int, height: Int, mowers: Map[Mower, List[Instruction] ]) {
 
-  def isInside(position: Position): Boolean = {
+  private def isInside(position: Position): Boolean = {
     position.getX >= 0 && position.getX <= width && position.getY >= 0 && position.getY <= height
   }
 
-  def resolve(): List[Mower] = {
-    mowers.map { case (mower, instructions) => instructions.foldLeft(mower)((oldMower, instruction) => {
-      val newMower = oldMower.move(instruction)
-      if (isInside(newMower.getPosition)) newMower else oldMower
-    })}.toList
-  }
-
-  def resolve2(): LandResult = {
-    LandResult(width, height, mowers.map { case (mower, instructions) => (mower, instructions, instructions.foldLeft(mower)((oldMower, instruction) => {
+  def resolve(): LandResult = {
+    LandResult(width, height, mowers.map { case (mower, instructions) => MowerHandler(mower, instructions, instructions.foldLeft(mower)((oldMower, instruction) => {
       val newMower = oldMower.move(instruction)
       if (isInside(newMower.getPosition)) newMower else oldMower
     }))}.toList)
   }
-}
-
-case class LandResult( width: Int, height: Int, mowers: List[(Mower, List[Instruction], Mower)] ) {
-
 }

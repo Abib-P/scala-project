@@ -1,9 +1,9 @@
 package fr.esgi.al.funprog.cli
 
 abstract class CliArgumentValue(name: String, mandatoryCmdArgument: List[CliArgument]) {
-  def getName(): String = name
+  def getName: String = name
 
-  def getMandatoryCmdArgument(): List[CliArgument] = mandatoryCmdArgument
+  def getMandatoryCmdArgument: List[CliArgument] = mandatoryCmdArgument
 }
 
 case class CliArgumentValueInvalid(name: String) extends CliArgumentValue(name, List())

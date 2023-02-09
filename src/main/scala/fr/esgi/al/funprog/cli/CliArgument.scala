@@ -2,9 +2,9 @@ package fr.esgi.al.funprog.cli
 
 abstract class CliArgument(name: String, possibleValue: Option[List[CliArgumentValue]]) {
 
-  def getName(): String = name
+  def getName: String = name
 
-  def getPossibleValue(): Option[List[CliArgumentValue]] = possibleValue
+  def getPossibleValue: Option[List[CliArgumentValue]] = possibleValue
 }
 
 case class CliArgumentInputType() extends CliArgument("--input-type", Some(List[CliArgumentValue](CliArgumentValueInputTypeFile(), CmdArgumentValueInputTypeCli())))
