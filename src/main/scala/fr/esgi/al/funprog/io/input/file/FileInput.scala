@@ -4,6 +4,6 @@ import fr.esgi.al.funprog.io.input.Input
 
 abstract class FileInput(filePath: String) extends Input {
 
-  def getFile(): String = filePath
+  def getFile: String = filePath
 
 }

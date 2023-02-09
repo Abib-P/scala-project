@@ -4,5 +4,5 @@ import fr.esgi.al.funprog.land.LandConfiguration
 
 trait Input {
 
-  def getInput(): LandConfiguration
+  def getInput: LandConfiguration
 }
