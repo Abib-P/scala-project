@@ -1,7 +1,7 @@
 package fr.esgi.al.funprog.io.input
 
 import fr.esgi.al.funprog.cli._
-import fr.esgi.al.funprog.io.input.file.FileInput
+import fr.esgi.al.funprog.io.input.file.TextFileInput
 import org.scalatest.funsuite.AnyFunSuite
 
 class InputParserSpec extends AnyFunSuite {
@@ -12,7 +12,7 @@ class InputParserSpec extends AnyFunSuite {
     )
 
     test match {
-      case FileInput(filePath) => assert(filePath == "test.txt")
+      case TextFileInput(filePath) => assert(filePath == "test.txt")
       case _ => fail()
     }
   }
@@ -23,7 +23,7 @@ class InputParserSpec extends AnyFunSuite {
     )
 
     test match {
-      case FileInput(filePath) => assert(filePath == "in.txt")
+      case TextFileInput(filePath) => assert(filePath == "in.txt")
       case _ => fail()
     }
   }

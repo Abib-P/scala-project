@@ -2,7 +2,7 @@
   <configuration default="false" name="Main" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="fr.esgi.al.funprog.Main" />
     <module name="funprog-AL" />
-    <option name="PROGRAM_PARAMETERS" value=" --input-type=cmd  --output-src=./test.json --output-type=file --input-src=AAAAAAAAAAAAAA" />
+    <option name="PROGRAM_PARAMETERS" value=" --input-type=file  --output-src=./test.json --output-type=file --input-src=./input.txt" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="fr.esgi.al.funprog.cli.*" />
