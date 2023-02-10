@@ -7,11 +7,18 @@ import fr.esgi.al.funprog.io.output.file.{CsvFileOutput, JsonFileOutput}
 
 object OutputParser  {
   def parseCliArgument(cliArgs: Map[CliArgument, CliArgumentValue]): Output = {
-    val inputType = getCliArgumentValue(cliArgs, CliArgumentOutputType())
-    inputType match {
-      case List(CmdArgumentValueOutputTypeCli()) => CmdOutput()
-      case List(CliArgumentValueInput(src), CliArgumentValueOutputTypeJson()) => JsonFileOutput(src)
-      case List(CliArgumentValueInput(src), CliArgumentValueOutputTypeCsv()) => CsvFileOutput(src)
+    getCliArgumentValue(cliArgs, CliArgumentOutputType()) match {
+      case x if x.contains(CmdArgumentValueOutputTypeCli()) => CmdOutput()
+      case x if x.exists(_.isInstanceOf[CliArgumentValueInput]) && x.contains(CliArgumentValueOutputTypeJson()) =>
+        JsonFileOutput(name = x.find(_.isInstanceOf[CliArgumentValueInput])
+          .map(_.getName)
+          .getOrElse("")
+        )
+      case x if x.exists(_.isInstanceOf[CliArgumentValueInput]) && x.contains(CliArgumentValueOutputTypeCsv()) =>
+        CsvFileOutput(name = x.find(_.isInstanceOf[CliArgumentValueInput])
+          .map(_.getName)
+          .getOrElse("")
+        )
       case _ => CmdOutput()
     }
   }

@@ -2,7 +2,6 @@ package fr.esgi.al.funprog.cli
 
 abstract class CliArgumentValue(name: String, mandatoryCmdArgument: List[CliArgument]) {
   def getName: String = name
-
   def getMandatoryCmdArgument: List[CliArgument] = mandatoryCmdArgument
 }
 
