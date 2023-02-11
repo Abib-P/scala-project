@@ -33,7 +33,9 @@ case class Mower(initialPosition: Position, initialOrientation: Orientation) {
   }
 
   def print(): Unit = {
-    println(s"Mower: ${position.getX.toString} ${position.getY.toString} ${orientation.toString}")
+    println(
+      s"Mower: ${position.getX.toString} ${position.getY.toString} ${orientation.toString}"
+    )
   }
 
 }

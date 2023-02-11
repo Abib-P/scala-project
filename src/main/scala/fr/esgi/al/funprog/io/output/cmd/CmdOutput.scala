@@ -7,7 +7,11 @@ import fr.esgi.al.funprog.land.mower.Orientation
 case class CmdOutput() extends Output {
   override def writeOutput(configuration: LandResult): Unit = {
     configuration.mowers.foreach(mower => {
-      println(mower.end.getPosition.getX.toString + " " + mower.end.getPosition.getY.toString + " " + Orientation.toChar(mower.end.getOrientation).toString)
+      println(
+        mower.end.getPosition.getX.toString + " " + mower.end.getPosition.getY.toString + " " + Orientation
+          .toChar(mower.end.getOrientation)
+          .toString
+      )
     })
   }
 }

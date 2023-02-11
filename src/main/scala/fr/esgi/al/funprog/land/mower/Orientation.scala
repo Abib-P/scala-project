@@ -14,26 +14,25 @@ object Orientation extends Enumeration {
   def toChar(orientation: Orientation): Char = orientation match {
     case North => 'N'
     case South => 'S'
-    case West => 'W'
-    case East => 'E'
+    case West  => 'W'
+    case East  => 'E'
   }
 
   def turnLeft(orientation: Orientation): Orientation = {
     orientation match {
       case North => West
-      case West => South
+      case West  => South
       case South => East
-      case East => North
+      case East  => North
     }
   }
 
   def turnRight(orientation: Orientation): Orientation = {
     orientation match {
       case North => East
-      case East => South
+      case East  => South
       case South => West
-      case West => North
+      case West  => North
     }
   }
 }
-

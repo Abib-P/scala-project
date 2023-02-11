@@ -9,7 +9,7 @@ ThisBuild / scalafmtOnCompile := true
 
 fork in run := true
 connectInput in run := true
-mainClass in Compile := Some("fr.esgi.al.funprog.Main")
+mainClass in (Compile, run) := Some("fr.esgi.al.funprog.Main")
 
 lazy val root = (project in file("."))
   .settings(
@@ -26,6 +26,7 @@ lazy val root = (project in file("."))
     wartremoverWarnings ++= Warts.unsafe,
     wartremoverErrors ++= Warts.unsafe
   )
+
   
 
 val compilerOptions = Seq(

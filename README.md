@@ -1,5 +1,18 @@
 # Projet AL
 
+## Comment lancer le projet
+
+Pour lancer le projet, il suffit de lancer le main avec des arguments. Les arguments sont les suivants: 
+
+- `--input-type` : défini la façon de donner les informations au programme.
+    Valeurs possibles: `file` ou `cmd`
+- `--input-src` : chemin vers le fichier d'entrée. Exemple: `./input.txt`
+- `output-type` : défini la façon dont le programme va donnée les information final.
+    Valeurs possibles: `cmd`, `yaml`, `json` ou `csv`
+- `--output-src` : chemin vers le fichier de sortie. Exemple: `./output.txt`
+
+Si vous utilisez intellij, une configuration de lancement est disponible dans le fichier `./run/Main.run.xml` (`Main`). Vous pouvez lancer le projet en cliquant sur le bouton `Run` dans la barre d'outils. (N'oubliez pas d'edit la configuration pour y mettre les bons arguments) 
+
 ## Pré-requis
 
 Il est indispensable d'avoir installé en local:

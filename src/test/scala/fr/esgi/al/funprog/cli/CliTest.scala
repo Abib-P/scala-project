@@ -3,7 +3,7 @@ package fr.esgi.al.funprog.cli
 import fr.esgi.al.funprog.cli
 import org.scalatest.funsuite.AnyFunSuite
 
-class CliSpec extends AnyFunSuite {
+class CliTest extends AnyFunSuite {
 
   test("should parse --input-type=cmd") {
     cli.parseCliArgument(List("--input-type=cmd"), List(CliArgumentInputType()))
@@ -28,10 +28,7 @@ class CliSpec extends AnyFunSuite {
     val arg = parsed.get(CliArgumentInputSrc())
     arg match {
       case None => fail()
-      case Some(CliArgumentValueInput(src)) => {
-        println("src: \"" + src +"\"")
-        assert(src == "test")
-      }
+      case Some(CliArgumentValueInput(src)) => assert(src == "test")
       case Some(_) => fail()
     }
   }

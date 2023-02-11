@@ -7,8 +7,8 @@ case class Position(x: Int, y: Int) {
     orientation match {
       case Orientation.North => Position(x, y + 1)
       case Orientation.South => Position(x, y - 1)
-      case Orientation.West => Position(x - 1, y)
-      case Orientation.East => Position(x + 1, y)
+      case Orientation.West  => Position(x - 1, y)
+      case Orientation.East  => Position(x + 1, y)
     }
   }
 
