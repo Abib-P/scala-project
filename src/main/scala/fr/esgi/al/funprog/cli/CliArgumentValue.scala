@@ -17,4 +17,6 @@ case class CliArgumentValueOutputTypeJson() extends CliArgumentValue("json", Lis
 
 case class CliArgumentValueOutputTypeCsv() extends CliArgumentValue("csv", List(CliArgumentOutputSrc()))
 
+case class CliArgumentValueOutputTypeYaml() extends CliArgumentValue("yaml", List(CliArgumentOutputSrc()))
+
 case class CmdArgumentValueOutputTypeCli() extends CliArgumentValue("cmd", List())

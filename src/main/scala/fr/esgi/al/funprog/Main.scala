@@ -11,7 +11,6 @@ object Main extends App {
   val land = input.getInput
   private val res = land.resolve()
 
-  output.writeOutput( res)
-
+  output.writeOutput(res)
 }
 

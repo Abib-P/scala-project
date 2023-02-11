@@ -8,7 +8,6 @@ import fr.esgi.al.funprog.land.{LandConfiguration, LandResult, MowerHandler}
 import fr.esgi.al.funprog.land.mower.Orientation.Orientation
 import fr.esgi.al.funprog.land.mower.{Mower, Orientation, Position}
 
-
 object JsonSerializable {
     implicit val serializePosition: Serializable[Position] = (position: Position, depth: Int) =>
         s"""${getTab(depth)}"point": {
@@ -55,5 +54,4 @@ case class JsonFileOutput(name: String) extends FileOutput(name) {
         file.overwrite(JsonSerializable.serializeLandResult.serialize(configuration, 1))
         ()
     }
-
 }
